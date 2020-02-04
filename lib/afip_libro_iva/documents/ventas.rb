@@ -7,7 +7,7 @@ module AfipLibroIva
       @comprobantes = comprobantes
     end
 
-    def build(@comprobantes)
+    def build
       @comprobantes.each do |comprobante|
         append_record  ComprobanteVenta.new(comprobante)
       end

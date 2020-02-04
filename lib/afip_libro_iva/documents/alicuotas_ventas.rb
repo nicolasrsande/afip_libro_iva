@@ -7,7 +7,7 @@ module AfipLibroIva
       @alicuotas = alicuotas
     end
 
-    def build(@alicuotas)
+    def build
       @alicuotas.each do |alicuota|
         append_record  AlicuotaVenta.new(alicuota)
       end
