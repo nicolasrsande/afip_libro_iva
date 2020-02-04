@@ -32,7 +32,6 @@ module AfipLibroIva
       @importe_neto_gravado = alicuota[:importe_neto_gravado]
       @alicuota_iva = TIPO_ALICUOTA.fetch(alicuota[:alicuota_iva])
       @impuesto_liquidado = alicuota[:impuesto_liquidado]
-
     end
   end
 end
