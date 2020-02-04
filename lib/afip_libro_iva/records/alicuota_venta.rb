@@ -1,10 +1,13 @@
 module AfipLibroIva
   require "afip_libro_iva/fixy/formatter/numeric"
+  require "afip_libro_iva/fixy/formatter/numeric_currency"
   require 'afip_libro_iva/constants'
 
   class AlicuotaVenta < Fixy::Record
     include Fixy::Formatter::Alphanumeric
     include Fixy::Formatter::Numeric
+    include Fixy::Formatter::NumericCurrency
+
 
     set_record_length 62
 

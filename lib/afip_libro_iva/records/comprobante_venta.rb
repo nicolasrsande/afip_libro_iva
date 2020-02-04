@@ -1,9 +1,11 @@
 module AfipLibroIva
   require "afip_libro_iva/fixy/formatter/numeric"
+  require "afip_libro_iva/fixy/formatter/numeric_currency"
 
   class ComprobanteVenta < Fixy::Record
     include Fixy::Formatter::Alphanumeric
     include Fixy::Formatter::Numeric
+    include Fixy::Formatter::NumericCurrency
 
     set_record_length 266
 
@@ -19,19 +21,19 @@ module AfipLibroIva
     field :cod_documento_comprador ,     2,     '57-58',      :numeric
     field :numero_identificador_comprador ,     20,     '59-78',      :alphanumeric
     field :identificacion_comprador ,     30,     '79-108',      :alphanumeric
-    field :importe_total ,     15,     '109-123',      :numeric
-    field :importe_no_gravado ,     15,     '124-138',      :numeric
-    field :percepcion_no_categorizados ,     15,     '139-153',      :numeric
-    field :importe_exento ,     15,     '154-168',      :numeric
-    field :importe_nacionales ,     15,     '169-183',      :numeric
-    field :importe_iibb ,     15,     '184-198',      :numeric
-    field :importe_municipales ,     15,     '199-213',      :numeric
-    field :importe_internos ,     15,     '214-228',      :numeric
+    field :importe_total ,     15,     '109-123',      :numeric_currency
+    field :importe_no_gravado ,     15,     '124-138',      :numeric_currency
+    field :percepcion_no_categorizados ,     15,     '139-153',      :numeric_currency
+    field :importe_exento ,     15,     '154-168',      :numeric_currency
+    field :importe_nacionales ,     15,     '169-183',      :numeric_currency
+    field :importe_iibb ,     15,     '184-198',      :numeric_currency
+    field :importe_municipales ,     15,     '199-213',      :numeric_currency
+    field :importe_internos ,     15,     '214-228',      :numeric_currency
     field :codigo_moneda ,     3,     '229-231',      :alphanumeric
-    field :tipo_cambio ,     10,     '232-241',      :numeric
+    field :tipo_cambio ,     10,     '232-241',      :numeric_currency
     field :cantidad_alicuotas ,     1,     '242-242',      :numeric
     field :codigo_operacion ,     1,     '243-243',      :alphanumeric
-    field :importe_otros_tributos ,     15,     '244-258',      :numeric
+    field :importe_otros_tributos ,     15,     '244-258',      :numeric_currency
     field :vencimiento_pago ,     8,     '259-266',      :numeric
 
     def initialize(comprobante)
