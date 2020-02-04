@@ -59,6 +59,11 @@ module AfipLibroIva
       @vencimiento_pago = comprobante[:vencimiento] || comprobante[:fecha].strftime('%Y%m%d')
     end
 
+    attr_reader :fecha, :tipo_comprobante, :punto_venta, :numero_comprobante, :numero_comprobante_hasta, :cod_documento_comprador, :identificacion_comprador,
+    :numero_identificador_comprador, :importe_total, :importe_no_gravado, :percepcion_no_categorizados, :importe_exento, :importe_nacionales,
+    :importe_iibb, :importe_municipales, :importe_internos, :codigo_moneda, :tipo_cambio, :cantidad_alicuotas, :codigo_operacion, :importe_otros_tributos,
+    :vencimiento_pago
+
     def total(comprobante) # Calcularemos el total en base a las alicuotas y impuestos para que el valor sea exacto.
       importe_total = 0
       importe_total += comprobante.values_at(:importe_internos, :importe_exento, :importe_iibb, :importe_municipales,
