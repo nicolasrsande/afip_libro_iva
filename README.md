@@ -1,7 +1,6 @@
 # AfipLibroIva
 
 AfipLibroIva permite generar los archivos de importacion de IVA Ventas y Compras tanto para SIAP y Libro de IVA Digital de AFIP. 
-Tener en cuenta que para utilizar la gema, deben pasarse los comprobantes de la forma predeterminada en la gema.
 
 ## Instalacion
 
@@ -19,18 +18,30 @@ O instalala vos mismo ejecutando:
 
     $ gem install afip_libro_iva
 
-## Uso
-
-#####VENTAS
-Para generar el archivo de comprobantes de ventas, es necesario realizar lo siguiente: 
-
-TODO
+## Uso / Usage
 
 
-## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/afip_libro_iva. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/afip_libro_iva/blob/master/CODE_OF_CONDUCT.md).
+## Donaciones / Donations 
 
-## License
+Si encuentras util esta gema, podras donar sin compromiso mediante bitcoin a la siguiente direccion:
+
+    3BeXE6EYrxRGtb65JRqxY32L5yAwQtnv1T
+
+Ademas, si necesitas alguna personalizacion del sistema, tambien ofrezco servicios profesionales donde podremos generar una version del sistema adaptado a tus necesidades. 
+
+--
+
+If you find this gem useful, you can donate to the following address: 
+
+    3BeXE6EYrxRGtb65JRqxY32L5yAwQtnv1T
+    
+If you need any personalization of the system, we can generate a version of the gem adapted to your needs. Contact me at nicolasrsande@gmail.com    
+
+## Licencia / License
+
+Esta gema esta disponible bajo los terminos de la licencia [MIT License](https://opensource.org/licenses/MIT).
+
+--
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
