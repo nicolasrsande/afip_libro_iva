@@ -1,4 +1,6 @@
 module AfipLibroIva
+  require "afip_libro_iva/fixy/formatter/numeric"
+
   class ComprobanteCompra < Fixy::Record
     include Fixy::Formatter::Alphanumeric
     include Fixy::Formatter::Numeric
