@@ -1,5 +1,6 @@
 module AfipLibroIva
   require "afip_libro_iva/fixy/formatter/numeric"
+  require 'afip_libro_iva/constants'
 
   class AlicuotaVenta < Fixy::Record
     include Fixy::Formatter::Alphanumeric
@@ -24,7 +25,7 @@ module AfipLibroIva
         @punto_venta = comprobante[:punto_venta]
         @numero_comprobante = comprobante[:numero_comprobante]
         @importe_neto_gravado = alicuota[:importe_neto_gravado]
-        @alicuota_iva = alicuota[:alicuota_iva]
+        @alicuota_iva = TIPO_ALICUOTA.fetch(alicuota[:alicuota_iva])
         @impuesto_liquidado = alicuota[:impuesto_liquidado]
       end
     end

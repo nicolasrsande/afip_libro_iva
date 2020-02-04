@@ -1,5 +1,6 @@
 require 'fixy'
 require "afip_libro_iva/version"
+require 'afip_libro_iva/constants'
 require "afip_libro_iva/documents/ventas"
 require "afip_libro_iva/documents/compras"
 require "afip_libro_iva/documents/alicuotas_ventas"
@@ -9,6 +10,9 @@ require "afip_libro_iva/fixy/formatter/numeric"
 module AfipLibroIva
   class Error < StandardError; end
 
+  ## Call the class with AfipLibroIva::AfipVentas.new(comprobantes). Return: Object with comprobantes and alicuotas.
+  # AfipLibroIva::AfipVentas.new(comprobantes).ventas - ventas.txt
+  # AfipLibroIva::AfipVentas.new(comprobantes).alicuotas_ventas - alicuotas_ventas.txt
   class AfipVentas
     def initialize(comprobantes)
       @ventas = Ventas.new(comprobantes).generate
@@ -16,6 +20,9 @@ module AfipLibroIva
     end
   end
 
+  ## Call the class with AfipLibroIva::AfipCompras.new(comprobantes). Return: Object with comprobantes and alicuotas.
+  # AfipLibroIva::AfipCompras.new(comprobantes).ventas - compras.txt
+  # AfipLibroIva::AfipCompras.new(comprobantes).alicuotas_ventas - alicuotas_compras.txt
   class AfipCompras
     def initialize(comprobantes)
       @compras = Compras.new(comprobantes).generate

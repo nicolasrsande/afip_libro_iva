@@ -23,7 +23,24 @@ comprobantes = [{ fecha: '2020-01-01',
                              importe_neto_gravado: 2313,
                              importe_iva: 313
                               }]
-                }] # Puede agregar mas comprobantes al array.
+                },
+                tipo_comprobante: 06,
+                punto_venta: 1,
+                numero_comprobante: 1234,
+                cod_documento_comprador: 1,
+                numero_identificador_comprador: 11111111111,
+                identificacion_comprador: 'PANCHITO S.A',
+                cantidad_alicuotas: 2,
+                alicuotas: [{alicuota_iva: 'IVA21',
+                             importe_neto_gravado: 1500,
+                             importe_iva: 143
+                            },
+                            {alicuota_iva: 'IVA10.5',
+                             importe_neto_gravado: 2313,
+                             importe_iva: 313
+                            }]
+                }]
+
 
 ## Totalidad de campos del comprobante:
 # DEFINICION
