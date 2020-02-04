@@ -23,7 +23,7 @@ module AfipLibroIva
     field :impuesto_liquidado,     15,     '70-84' ,      :numeric
 
     def initialize(alicuota)
-      @tipo_comprobante = alicuota:[tipo_comprobante]
+      @tipo_comprobante = alicuota[:tipo_comprobante]
       @punto_venta = alicuota[:punto_venta]
       @numero_comprobante = alicuota[:numero_comprobante]
       @tipo_documento_vendedor = alicuota[:tipo_documento_vendedor]
