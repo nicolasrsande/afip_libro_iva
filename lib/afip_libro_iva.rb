@@ -4,7 +4,7 @@ require "afip_libro_iva/documents/ventas"
 require "afip_libro_iva/documents/compras"
 require "afip_libro_iva/documents/alicuotas_ventas"
 require "afip_libro_iva/documents/alicuotas_compras"
-require "afip_libro_iva/formaters/numeric"
+require "afip_libro_iva/fixy/formatter/numeric"
 
 module AfipLibroIva
   class Error < StandardError; end
