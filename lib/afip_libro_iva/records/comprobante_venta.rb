@@ -46,7 +46,7 @@ module AfipLibroIva
       @numero_identificador_comprador = comprobante[:documento]
       @identificacion_comprador = comprobante[:razon_social].truncate(29) || 'SIN IDENTIFICAR'
       @importe_total = total(comprobante)
-      @importe_no_gravado = comprobante[:importe_no_gravado] ||= 0
+      @importe_no_gravado = comprobante[:importe_no_gravado] || 0
       @percepcion_no_categorizados = 0
       @importe_exento = comprobante[:importe_exento] || 0
       @importe_nacionales = comprobante[:importe_nacionales] || 0

@@ -40,6 +40,8 @@ comprobantes = [{ fecha: Date.new(2019-01-01),
                             }]
                 }]
 
+AfipLibroIva::AfipVentas.new(comprobantes)
+
 
 ## Totalidad de campos del comprobante:
 # DEFINICION
