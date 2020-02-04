@@ -25,7 +25,7 @@ module AfipLibroIva
     field :importe_no_gravado ,     15,     '120-134',      :numeric
     field :importe_exento ,     15,     '135-149',      :numeric
     field :importe_pagos_a_cuenta_iva ,     15,     '150-164',      :numeric
-    field :importe_nacionales ,     15,     '165-169',      :numeric
+    field :importe_nacionales ,     15,     '165-179',      :numeric
     field :importe_iibb ,     15,     '180-194',      :numeric
     field :importe_municipales ,     15,     '195-209',      :numeric
     field :importe_internos ,     15,     '210-224',      :numeric
