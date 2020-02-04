@@ -1,7 +1,7 @@
 module AfipLibroIva
   require "afip_libro_iva/fixy/formatter/numeric"
 
-  class AlicuotaVenta < Fixy::Record
+  class AlicuotaCompra < Fixy::Record
     include Fixy::Formatter::Alphanumeric
     include Fixy::Formatter::Numeric
 
