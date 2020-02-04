@@ -1,6 +1,8 @@
 module AfipLibroIva
   class ComprobanteCompra < Fixy::Record
     include Fixy::Formatter::Alphanumeric
+    include Fixy::Formatter::Numeric
+
 
     set_record_length 325
 

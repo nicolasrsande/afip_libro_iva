@@ -1,6 +1,8 @@
 module AfipLibroIva
   class AlicuotaVenta < Fixy::Record
     include Fixy::Formatter::Alphanumeric
+    include Fixy::Formatter::Numeric
+
 
     set_record_length 62
 
