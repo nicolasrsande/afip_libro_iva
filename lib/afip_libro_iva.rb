@@ -1,3 +1,4 @@
+require 'fixy'
 require "afip_libro_iva/version"
 require "afip_libro_iva/documents/ventas"
 require "afip_libro_iva/documents/compras"
