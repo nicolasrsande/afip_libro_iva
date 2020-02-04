@@ -17,9 +17,9 @@ module AfipLibroIva
     field :tipo_comprobante,     3,     '1-3' ,      :numeric
     field :punto_venta,     5,     '4-8' ,      :numeric
     field :numero_comprobante,     20,     '9-28' ,      :numeric
-    field :importe_neto_gravado,     15,     '29-43' ,      :numeric
+    field :importe_neto_gravado,     15,     '29-43' ,      :numeric_currency
     field :alicuota_iva,     4,     '44-47' ,      :numeric
-    field :impuesto_liquidado,     15,     '48-62' ,      :numeric
+    field :impuesto_liquidado,     15,     '48-62' ,      :numeric_currency
 
     def initialize(comprobante, alicuota)
       @tipo_comprobante = comprobante[:tipo_comprobante]
