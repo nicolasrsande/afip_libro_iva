@@ -13,7 +13,7 @@ comprobantes = [{ fecha: Date.new(2019-01-01),
                   numero_comprobante: 1234,
                   cod_documento_comprador: 1,
                   numero_identificador_comprador: 11111111111,
-                  razon_social: 'PANCHITO S.A',
+                  identificacion_comprador: 'PANCHITO S.A',
                   alicuotas: [{alicuota_iva: 'IVA21',
                              importe_neto_gravado: 1500,
                              importe_iva: 143
@@ -29,7 +29,7 @@ comprobantes = [{ fecha: Date.new(2019-01-01),
                   numero_comprobante: 1234,
                   cod_documento_comprador: 1,
                   numero_identificador_comprador: 11111111111,
-                  razon_social: 'PANCHITO S.A',
+                  identificacion_comprador : 'PANCHITO S.A',
                   alicuotas: [{alicuota_iva: 'IVA21',
                              importe_neto_gravado: 1500,
                              importe_iva: 143
@@ -41,6 +41,7 @@ comprobantes = [{ fecha: Date.new(2019-01-01),
                 }]
 
 AfipLibroIva::AfipVentas.new(comprobantes)
+
 
 
 ## Totalidad de campos del comprobante:

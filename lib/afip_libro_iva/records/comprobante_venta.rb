@@ -43,8 +43,8 @@ module AfipLibroIva
       @numero_comprobante = comprobante[:numero_comprobante]
       @numero_comprobante_hasta = comprobante[:numero_comprobante]
       @cod_documento_comprador = comprobante[:tipo_documento] || 80
-      @numero_identificador_comprador = comprobante[:documento]
-      @identificacion_comprador = comprobante[:razon_social].truncate(29) || 'SIN IDENTIFICAR'
+      @numero_identificador_comprador = comprobante[:numero_identificador_comprador]
+      @identificacion_comprador = comprobante[:identificacion_comprador ].truncate(29) || 'SIN IDENTIFICAR'
       @importe_total = total(comprobante)
       @importe_no_gravado = comprobante[:importe_no_gravado] || 0
       @percepcion_no_categorizados = 0
@@ -54,7 +54,7 @@ module AfipLibroIva
       @importe_municipales = comprobante[:importe_municipales] || 0
       @importe_internos = comprobante[:importe_internos] || 0
       @codigo_moneda = comprobante[:moneda] || 'PES'
-      @tipo_cambio = comprobante[:tipo_cambio] * 1_000_000 unless comprobante[:tipo_cambio].nil? || 1000000
+      @tipo_cambio = (comprobante[:tipo_cambio] * 1_000_000 unless nil?) || 1000000
       @cantidad_alicuotas = comprobante[:alicuotas].count
       @codigo_operacion = comprobante[:codigo_operacion] || 0
       @importe_otros_tributos = comprobante[:otros_tributos] || 0
