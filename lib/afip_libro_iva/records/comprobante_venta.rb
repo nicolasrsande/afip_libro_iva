@@ -1,6 +1,7 @@
 module AfipLibroIva
   require "afip_libro_iva/fixy/formatter/numeric"
   require "afip_libro_iva/fixy/formatter/numeric_currency"
+  require "afip_libro_iva/fixy/formatter/numeric_cot"
 
   class ComprobanteVenta < Fixy::Record
     include Fixy::Formatter::Alphanumeric
@@ -19,7 +20,7 @@ module AfipLibroIva
     field :numero_comprobante ,     20,     '17-36',      :numeric
     field :numero_comprobante_hasta ,     20,     '37-56',      :numeric
     field :cod_documento_comprador ,     2,     '57-58',      :numeric
-    field :numero_identificador_comprador ,     20,     '59-78',      :alphanumeric
+    field :numero_identificador_comprador ,     20,     '59-78',      :numeric
     field :identificacion_comprador ,     30,     '79-108',      :alphanumeric
     field :importe_total ,     15,     '109-123',      :numeric_currency
     field :importe_no_gravado ,     15,     '124-138',      :numeric_currency
@@ -30,7 +31,7 @@ module AfipLibroIva
     field :importe_municipales ,     15,     '199-213',      :numeric_currency
     field :importe_internos ,     15,     '214-228',      :numeric_currency
     field :codigo_moneda ,     3,     '229-231',      :alphanumeric
-    field :tipo_cambio ,     10,     '232-241',      :numeric_currency
+    field :tipo_cambio ,     10,     '232-241',      :numeric_cot
     field :cantidad_alicuotas ,     1,     '242-242',      :numeric
     field :codigo_operacion ,     1,     '243-243',      :alphanumeric
     field :importe_otros_tributos ,     15,     '244-258',      :numeric_currency
@@ -54,7 +55,7 @@ module AfipLibroIva
       @importe_municipales = comprobante[:importe_municipales] || 0
       @importe_internos = comprobante[:importe_internos] || 0
       @codigo_moneda = comprobante[:codigo_moneda] || 'PES'
-      @tipo_cambio = (comprobante[:tipo_cambio] * 1_000_000 unless comprobante[:tipo_cambio].nil?) || 1000000
+      @tipo_cambio = (comprobante[:tipo_cambio] || 1
       @cantidad_alicuotas = comprobante[:alicuotas].count
       @codigo_operacion = comprobante[:codigo_operacion] || 0
       @importe_otros_tributos = comprobante[:otros_tributos] || 0

@@ -1,6 +1,8 @@
 module AfipLibroIva
   require "afip_libro_iva/fixy/formatter/numeric"
   require "afip_libro_iva/fixy/formatter/numeric_currency"
+  require "afip_libro_iva/fixy/formatter/numeric_cot"
+
 
   class ComprobanteCompra < Fixy::Record
     include Fixy::Formatter::Alphanumeric
@@ -31,7 +33,7 @@ module AfipLibroIva
     field :importe_municipales ,     15,     '195-209',      :numeric_currency
     field :importe_internos ,     15,     '210-224',      :numeric_currency
     field :codigo_moneda ,     3,     '225-227',      :alphanumeric
-    field :tipo_cambio ,     10,     '228-237',      :numeric_currency
+    field :tipo_cambio ,     10,     '228-237',      :numeric_cot
     field :cantidad_alicuotas ,     1,     '238-238',      :numeric
     field :codigo_operacion ,     1,     '239-239',      :alphanumeric
     field :credito_fiscal_computable ,     15,     '240-254',      :numeric_currency
@@ -46,9 +48,9 @@ module AfipLibroIva
       @punto_venta = comprobante[:punto_venta]
       @numero_comprobante = comprobante[:numero_comprobante]
       @despacho_importacion = comprobante[:despacho_importacion] || 0
-      @cod_documento_vendedor = comprobante[:tipo_documento] || 80
-      @numero_identificador_vendedor = comprobante[:documento]
-      @identificacion_vendedor = comprobante[:razon_social].truncate(29)
+      @cod_documento_vendedor = comprobante[:cod_documento_vendedor] || 80
+      @numero_identificador_vendedor = comprobante[:numero_identificador_vendedor]
+      @identificacion_vendedor = comprobante[:identificacion_vendedor].truncate(29) || 'SIN IDENTIFICAR'
       @importe_total = total(comprobante)
       @importe_no_gravado = comprobante[:importe_no_gravado] || 0
       @importe_exento = comprobante[:importe_exento] || 0
@@ -58,6 +60,7 @@ module AfipLibroIva
       @importe_municipales = comprobante[:importe_municipales] || 0
       @importe_internos = comprobante[:importe_internos] || 0
       @codigo_moneda = comprobante[:moneda] || 'PES'
+      @tipo_cambio = (comprobante[:tipo_cambio] || 1
       @cantidad_alicuotas = comprobante[:alicuotas].count
       @codigo_operacion = comprobante[:codigo_operacion] || 0
       @credito_fiscal_computable = comprobante[:credito_fiscal_computable] || 0
