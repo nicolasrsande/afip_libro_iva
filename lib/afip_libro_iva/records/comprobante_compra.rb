@@ -3,12 +3,11 @@ module AfipLibroIva
   require "afip_libro_iva/fixy/formatter/numeric_currency"
   require "afip_libro_iva/fixy/formatter/numeric_cot"
 
-
   class ComprobanteCompra < Fixy::Record
     include Fixy::Formatter::Alphanumeric
     include Fixy::Formatter::Numeric
     include Fixy::Formatter::NumericCurrency
-
+    include Fixy::Formatter::NumericCot
 
     set_record_length 325
 
@@ -60,7 +59,7 @@ module AfipLibroIva
       @importe_municipales = comprobante[:importe_municipales] || 0
       @importe_internos = comprobante[:importe_internos] || 0
       @codigo_moneda = comprobante[:moneda] || 'PES'
-      @tipo_cambio = (comprobante[:tipo_cambio] || 1
+      @tipo_cambio = comprobante[:tipo_cambio] || 1
       @cantidad_alicuotas = comprobante[:alicuotas].count
       @codigo_operacion = comprobante[:codigo_operacion] || 0
       @credito_fiscal_computable = comprobante[:credito_fiscal_computable] || 0

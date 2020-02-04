@@ -7,6 +7,7 @@ module AfipLibroIva
     include Fixy::Formatter::Alphanumeric
     include Fixy::Formatter::Numeric
     include Fixy::Formatter::NumericCurrency
+    include Fixy::Formatter::NumericCot
 
     set_record_length 266
 
@@ -55,11 +56,11 @@ module AfipLibroIva
       @importe_municipales = comprobante[:importe_municipales] || 0
       @importe_internos = comprobante[:importe_internos] || 0
       @codigo_moneda = comprobante[:codigo_moneda] || 'PES'
-      @tipo_cambio = (comprobante[:tipo_cambio] || 1
+      @tipo_cambio = comprobante[:tipo_cambio] || 1
       @cantidad_alicuotas = comprobante[:alicuotas].count
       @codigo_operacion = comprobante[:codigo_operacion] || 0
       @importe_otros_tributos = comprobante[:otros_tributos] || 0
-      @vencimiento_pago = comprobante[:vencimiento] || comprobante[:fecha].strftime('%Y%m%d')
+      @vencimiento_pago = comprobante[:vencimiento_pago] || comprobante[:fecha].strftime('%Y%m%d')
     end
 
     attr_reader :fecha, :tipo_comprobante, :punto_venta, :numero_comprobante, :numero_comprobante_hasta, :cod_documento_comprador, :identificacion_comprador,
