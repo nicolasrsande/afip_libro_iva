@@ -65,6 +65,7 @@ module AfipLibroIva
     end
 
     def total(comprobante) # Calcularemos el total en base a las alicuotas y impuestos para que el valor sea exacto.
+      importe_total = 0
       importe_total += comprobante.values_at(:importe_internos, :importe_exento, :importe_iibb, :importe_municipales,
                                              :importe_a_cuenta_iva, :importe_no_gravado, :importe_nacionales).compact.reduce(0, :+)
       comprobante[:alicuotas].each do |alicuota|

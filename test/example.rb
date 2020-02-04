@@ -7,13 +7,13 @@
 # Las alicuotas pueden ingresarse la cantidad que sean como tenga el comprobante.
 # En los valores numericos, el sistema espera numeros de tipo FLOAT:2
 
-comprobantes = [{ fecha: '2020-01-01',
+comprobantes = [{ fecha: Date.new(2019-01-01),
                 tipo_comprobante: 06,
                 punto_venta: 1,
                 numero_comprobante: 1234,
                 cod_documento_comprador: 1,
                 numero_identificador_comprador: 11111111111,
-                identificacion_comprador: 'PANCHITO S.A',
+                  razon_social: 'PANCHITO S.A',
                 cantidad_alicuotas: 2,
                 alicuotas: [{alicuota_iva: 'IVA21',
                              importe_neto_gravado: 1500,
@@ -24,12 +24,12 @@ comprobantes = [{ fecha: '2020-01-01',
                              importe_iva: 313
                               }]
                 },
-                tipo_comprobante: 06,
+                { tipo_comprobante: 06,
                 punto_venta: 1,
                 numero_comprobante: 1234,
                 cod_documento_comprador: 1,
                 numero_identificador_comprador: 11111111111,
-                identificacion_comprador: 'PANCHITO S.A',
+                  razon_social: 'PANCHITO S.A',
                 cantidad_alicuotas: 2,
                 alicuotas: [{alicuota_iva: 'IVA21',
                              importe_neto_gravado: 1500,
