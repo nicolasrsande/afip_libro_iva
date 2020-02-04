@@ -9,7 +9,9 @@ module AfipLibroIva
 
     def build
       @comprobantes.each do |comprobante|
-        append_record  AlicuotaCompra.new(comprobante)
+        comprobante[:alicuotas].each do |alicuota|
+          append_record  AlicuotaCompra.new(comprobante, alicuota)
+        end
       end
     end
   end

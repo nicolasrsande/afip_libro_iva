@@ -8,7 +8,6 @@ module AfipLibroIva
     include Fixy::Formatter::Numeric
     include Fixy::Formatter::NumericCurrency
 
-
     set_record_length 62
 
     # Fields Declaration:
@@ -22,15 +21,16 @@ module AfipLibroIva
     field :alicuota_iva,     4,     '44-47' ,      :numeric
     field :impuesto_liquidado,     15,     '48-62' ,      :numeric
 
-    def initialize(comprobante)
-      comprobante[:alicuotas].each do |alicuota|
-        @tipo_comprobante = comprobante[:tipo_comprobante]
-        @punto_venta = comprobante[:punto_venta]
-        @numero_comprobante = comprobante[:numero_comprobante]
-        @importe_neto_gravado = alicuota[:importe_neto_gravado]
-        @alicuota_iva = TIPO_ALICUOTA.fetch(alicuota[:alicuota_iva])
-        @impuesto_liquidado = alicuota[:impuesto_liquidado]
-      end
+    def initialize(comprobante, alicuota)
+      @tipo_comprobante = comprobante[:tipo_comprobante]
+      @punto_venta = comprobante[:punto_venta]
+      @numero_comprobante = comprobante[:numero_comprobante]
+      @importe_neto_gravado = alicuota[:importe_neto_gravado]
+      @alicuota_iva = TIPO_ALICUOTA.fetch(alicuota[:alicuota_iva])
+      @impuesto_liquidado = alicuota[:impuesto_liquidado]
     end
+
+    attr_reader :tipo_comprobante, :punto_venta, :numero_comprobante, :importe_neto_gravado, :alicuota_iva, :impuesto_liquidado
+
   end
 end

@@ -8,7 +8,7 @@
 # En los valores numericos, el sistema espera numeros de tipo FLOAT:2
 
 comprobantes = [{ fecha: Date.new(2019-01-01),
-                  tipo_comprobante: 06,
+                  tipo_comprobante: 6,
                   punto_venta: 1,
                   numero_comprobante: 1234,
                   cod_documento_comprador: 1,
@@ -24,7 +24,7 @@ comprobantes = [{ fecha: Date.new(2019-01-01),
                               }]
                 },
                 { fecha: Date.new(2019-01-01),
-                  tipo_comprobante: 06,
+                  tipo_comprobante: 6,
                   punto_venta: 1,
                   numero_comprobante: 1234,
                   cod_documento_comprador: 1,

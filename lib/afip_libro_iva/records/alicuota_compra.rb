@@ -23,17 +23,16 @@ module AfipLibroIva
     field :alicuota_iva,     4,     '66-69' ,      :numeric
     field :impuesto_liquidado,     15,     '70-84' ,      :numeric_currency
 
-    def initialize(comprobante)
-      comprobante[:alicuotas].each do |alicuota|
-        @tipo_comprobante = comprobante[:tipo_comprobante]
-        @punto_venta = comprobante[:punto_venta]
-        @numero_comprobante = comprobante[:numero_comprobante]
-        @tipo_documento_vendedor = comprobante[:tipo_documento_vendedor]
-        @numero_documento_vendedor = comprobante[:numero_documento_vendedor]
-        @importe_neto_gravado = alicuota[:importe_neto_gravado]
-        @alicuota_iva = TIPO_ALICUOTA.fetch(alicuota[:alicuota_iva])
-        @impuesto_liquidado = alicuota[:impuesto_liquidado]
-      end
+    def initialize(comprobante, alicuota)
+      @tipo_comprobante = comprobante[:tipo_comprobante]
+      @punto_venta = comprobante[:punto_venta]
+      @numero_comprobante = comprobante[:numero_comprobante]
+      @tipo_documento_vendedor = comprobante[:tipo_documento_vendedor]
+      @numero_documento_vendedor = comprobante[:numero_documento_vendedor]
+      @importe_neto_gravado = alicuota[:importe_neto_gravado]
+      @alicuota_iva = TIPO_ALICUOTA.fetch(alicuota[:alicuota_iva])
+      @impuesto_liquidado = alicuota[:impuesto_liquidado]
+
     end
   end
 end
