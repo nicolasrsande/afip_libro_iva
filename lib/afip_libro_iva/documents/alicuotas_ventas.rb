@@ -3,13 +3,13 @@ require 'afip_libro_iva/records/alicuota_venta'
 module AfipLibroIva
   class AlicuotasVentas < Fixy::Document
 
-    def initialize(alicuotas)
-      @alicuotas = alicuotas
+    def initialize(comprobantes)
+      @comprobantes = comprobantes
     end
 
     def build
-      @alicuotas.each do |alicuota|
-        append_record  AlicuotaVenta.new(alicuota)
+      @comprobantes.each do |comprobante|
+        append_record  AlicuotaVenta.new(comprobante)
       end
    end
   end
