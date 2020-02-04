@@ -33,7 +33,7 @@ module AfipLibroIva
     field :tipo_cambio ,     10,     '228-237',      :numeric
     field :cantidad_alicuotas ,     1,     '238-238',      :numeric
     field :codigo_operacion ,     1,     '239-239',      :alphanumeric
-    field :credito_fiscal_computable ,     1,     '240-254',      :numeric
+    field :credito_fiscal_computable ,     15,     '240-254',      :numeric
     field :importe_otros_tributos ,     15,     '255-269',      :numeric
     field :cuit_emisor_corredor ,     11,     '270-280',      :numeric
     field :denominacion_corredor ,     30,     '281-310',      :alphanumeric
