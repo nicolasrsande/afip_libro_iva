@@ -19,6 +19,8 @@ module AfipLibroIva
       @ventas = Ventas.new(comprobantes).generate
       @alicuotas_ventas = AlicuotasVentas.new(comprobantes).generate
     end
+
+    attr_accessor :ventas, :alicuotas_ventas
   end
 
   ## Call the class with AfipLibroIva::AfipCompras.new(comprobantes). Return: Object with comprobantes and alicuotas.
@@ -29,6 +31,8 @@ module AfipLibroIva
       @compras = Compras.new(comprobantes).generate
       @alicuotas_compras = AlicuotasCompras.new(alicuotas).generate
     end
+
+    attr_accessor :compras, :alicuotas_compras
   end
 
 end

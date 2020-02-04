@@ -16,7 +16,7 @@ comprobantes = [{ fecha: Date.new(2019-01-01),
                   identificacion_comprador: 'PANCHITO S.A',
                   alicuotas: [{alicuota_iva: 'IVA21',
                              importe_neto_gravado: 1500,
-                             importe_iva: 143
+                               impuesto_liquidado: 143
                               },
                             {alicuota_iva: 'IVA10.5',
                              importe_neto_gravado: 2313,
@@ -32,7 +32,7 @@ comprobantes = [{ fecha: Date.new(2019-01-01),
                   identificacion_comprador: 'PANCHITO S.A',
                   alicuotas: [{alicuota_iva: 'IVA21',
                              importe_neto_gravado: 1500,
-                             importe_iva: 143
+                               impuesto_liquidado: 143
                             },
                             {alicuota_iva: 'IVA10.5',
                              importe_neto_gravado: 2313,
